@@ -630,10 +630,7 @@
                                         >
                        <span>
                         {% assign current_variant = currentVariant %}
-                            {{current_variant}}
-                        {% assign current_variant_bol = product.selected_or_first_available_variant.available %}
-                            {{current_variant_bol}}
-                         
+                            {{current_variant.metafields}}
                         </span>
                         
                           {%- if product.selected_or_first_available_variant.available -%}
