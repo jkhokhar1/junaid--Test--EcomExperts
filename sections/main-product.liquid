@@ -531,7 +531,6 @@
                                             form="{{ product_form_id }}"
                                     >
 
-                                        <option  value="{{ option.values[0] | escape }}" data-type="default" selected >Please Select</option>
                                         {%- for value in option.values -%}
                                             <option
                                                     value="{{ value | escape }}"
@@ -630,8 +629,11 @@
                                                 {% endif %}
                                         >
                         <span>
-                        {% assign current_variant = product.selected_or_first_available_variant %}
+                        {% assign current_variant = product.selected_or_first_available_variant.value %}
                             {{current_variant}}
+                            </span>
+                        <span>
+                        
                           {%- if product.selected_or_first_available_variant.available -%}
                               {{ 'products.product.add_to_cart' | t }}
                           {%- else -%}
