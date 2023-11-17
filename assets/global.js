@@ -913,14 +913,13 @@ class VariantSelects extends HTMLElement {
   }
 
   onVariantChange() {
-    console.log('onVariantChange')
     this.updateOptions()
     this.updateMasterId()
     this.toggleAddButton(true, '', false)
     this.updatePickupAvailability()
     this.removeErrorMessage()
 
-    if (!this.currentVariant) {
+    if (!this.currentVariant && this.currentVariant.value != 'Unselected') {
       this.toggleAddButton(true, '', true)
       this.setUnavailable()
     } else {
