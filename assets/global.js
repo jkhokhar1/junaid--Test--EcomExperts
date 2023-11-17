@@ -919,6 +919,7 @@ class VariantSelects extends HTMLElement {
     this.updatePickupAvailability()
     this.removeErrorMessage()
     console.log('onchannge', this.currentVariant)
+    console.log(this.currentVariant.title.includes('Unselected'))
     if (
       !this.currentVariant &&
       this.currentVariant.title.includes('Unselected')
