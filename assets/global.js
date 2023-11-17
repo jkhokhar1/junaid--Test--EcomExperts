@@ -918,14 +918,12 @@ class VariantSelects extends HTMLElement {
     this.toggleAddButton(true, '', false)
     this.updatePickupAvailability()
     this.removeErrorMessage()
-    console.log('onchannge', this.currentVariant)
-    console.log(this.currentVariant.title.includes('Unselected'))
-    if (
-      !this.currentVariant ||
-      this.currentVariant.title.includes('Unselected')
-    ) {
+
+    if (!this.currentVariant) {
       this.toggleAddButton(true, '', true)
       this.setUnavailable()
+    } else if (this.currentVariant.title.includes('Unselected')) {
+      this.toggleAddButton(true, '', true)
     } else {
       this.updateMedia()
       this.updateURL()
