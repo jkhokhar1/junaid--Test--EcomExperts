@@ -921,7 +921,7 @@ class VariantSelects extends HTMLElement {
     console.log('onchannge', this.currentVariant)
     console.log(this.currentVariant.title.includes('Unselected'))
     if (
-      !this.currentVariant &&
+      !this.currentVariant ||
       this.currentVariant.title.includes('Unselected')
     ) {
       this.toggleAddButton(true, '', true)
