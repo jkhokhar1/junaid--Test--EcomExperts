@@ -628,6 +628,14 @@
                                                     disabled
                                                 {% endif %}
                                         >
+                                        <span>
+                        {% assign current_variant = currentVariant %}
+                            {{current_variant}}
+
+                                                    {% assign current_variant_bol = section.id %}
+                            {{current_variant_bol}}
+                         
+                        </span>
                        <span>
                           {%- if product.selected_or_first_available_variant.available -%}
                               {{ 'products.product.add_to_cart' | t }}

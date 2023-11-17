@@ -32,7 +32,6 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event) {
-    console.log(event.target.value, 'event.target.value')
     this.updateQuantity(
       event.target.dataset.index,
       event.target.value,
